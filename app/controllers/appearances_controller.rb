@@ -1,4 +1,5 @@
 class AppearancesController < ApplicationController
+  before_action :authenticate
 
   def new
     @appearance = Appearance.new

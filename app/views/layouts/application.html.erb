@@ -10,12 +10,14 @@
 
   <body>
     <% if current_user %>
+      <%= link_to 'Profile', user_path(current_user) %>
       <%= link_to 'Log Out', logout_path, method: :delete %>
     <% else %>
       <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
         <%= text_field_tag '[username]', nil, placeholder: 'Username' %>
         <%= password_field_tag '[password]', nil, placeholder: 'Password' %>
-        <%= submit_tag 'Sign In' %>
+        <%= submit_tag 'Sign In' %><br>
+        <%= flash[:error] %>
       <% end %>
     <% end %>
     <%= yield %>
