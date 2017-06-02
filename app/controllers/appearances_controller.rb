@@ -1,6 +1,10 @@
 class AppearancesController < ApplicationController
   before_action :authenticate
 
+  def index
+    @appearances = Appearance.all
+  end
+
   def new
     @appearance = Appearance.new
   end

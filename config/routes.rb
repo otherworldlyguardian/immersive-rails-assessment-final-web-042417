@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :guests, only: [:index, :show]
   resources :episodes, only: [:index, :show]
   resources :users, only: :show
-  resources :appearances, only: [:new, :create, :edit, :update]
+  resources :appearances, except: [:show, :destroy]
 
 end

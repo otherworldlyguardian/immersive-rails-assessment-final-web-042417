@@ -1,0 +1,24 @@
+<h1>All The Appearances</h1>
+
+<table>
+  <thead>
+    <th>Episode Number</th>
+    <th>Episode Date</th>
+    <th>Guest Name</th>
+    <th>Rating</th>
+    <th>User</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @appearances.each do |appearance| %>
+      <tr>
+        <td><%= appearance.episode.number %></td>
+        <td><%= appearance.episode.date %></td>
+        <td><%= appearance.guest.name %></td>
+        <td><%= appearance.rating %></td>
+        <td><%= appearance.user.username %></td>
+        <td><%= link_to 'Edit Appearance', edit_appearance_path(appearance) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
